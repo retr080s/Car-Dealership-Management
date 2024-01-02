@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ManagementController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'index');
+
+// Home page
+Route::get('/', [ManagementController::class, 'index']);
+
+// Vehicles page
+Route::get('/vehicles', [ManagementController::class, 'vehicles']);
+
+// Add a vehicle
+Route::get('/add-vehicle', [ManagementController::class, 'addVehicle']);
+
+// Add a task
+Route::get('/task', [ManagementController::class, 'addTask']);
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

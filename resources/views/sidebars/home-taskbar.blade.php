@@ -3,13 +3,7 @@
 <div class="min-h-screen flex">
     <aside class="bg-zinc-900 text-white/90 sticky top-0 flex-shrink-0 w-64 border-r border-teal-700/50">
         <nav class="px-4 py-4 flex flex-col space-y-4">
-            <p>Car Dealership Management</p>
-            <a href="/" class="text-lg font-bold"><i class="fa-solid fa-house text-teal-600"></i> Home</a>
-            <a href="#" class="text-lg font-bold"><i class="fa-solid fa-car text-teal-600"></i> Vehicles</a>
-            <a href="#" class="text-lg font-bold"><i class="fa-solid fa-warehouse text-teal-600"></i> Inventory Management</a>
-            <a href="#" class="text-lg font-bold"><i class="fa-solid fa-user text-teal-600"></i> Customers</a>
-            <a href="#" class="text-lg font-bold"><i class="fa-solid fa-dollar-sign text-teal-600"></i> Sales Management</a>
-            <a href="#" class="text-lg font-bold"><i class="fa-solid fa-list-check text-teal-600"></i> Add a task</a>
+            @include('important-components.sidebar-links')
         </nav>
     </aside>
     <main class="flex flex-wrap">
@@ -32,7 +26,7 @@
                                     
                                     {{-- Form for deleting the task --}}
                                     <form>
-                                        <button class="p-2 mt-2 rounded-xl bg-red-900/20 text-red-600">Delete</button>
+                                        <button class="p-2 mt-2 rounded-xl bg-red-900/20 text-red-600 hover:bg-red-900/30">Delete</button>
                                     </form>
                                 </div>
                                 

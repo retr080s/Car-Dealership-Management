@@ -7,11 +7,16 @@
         </nav>
     </aside>
     <main class="flex flex-wrap">
-        <div class="max-w-7xl mt-8 mx-auto p-6 lg:p-8">
+        <div class=" mt-8 mx-auto p-6 lg:p-8">
             <h1 class="text-white m-2">Vehicles page</h1>
             <a href="/add-vehicle">
                 <button class="p-2 mt-2 rounded-xl bg-teal-700/50 text-teal-500 hover:bg-teal-700/60">Add a vehicle</button>
             </a>
+            <div class="mt-4">
+                <livewire:vehiclesTable />
+            </div>
         </div>
     </main>
 </div>
+
+@livewireScripts

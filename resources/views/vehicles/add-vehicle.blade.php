@@ -22,13 +22,14 @@
                 </nav>
             </aside>
             <main class="">
-                <div class="max-w-7xl mt-8 mx-auto p-6 lg:p-8 ">
-                    <h1 class="text-white m-2">Add a vehicle</h1>
-                    
-                    {{-- Form --}}
+                <div class="max-w-7xl mt-8 mx-auto p-6 lg:p-8 "> 
+                    <h1 class="text-white m-2"><a href="/vehicles">
+                        <button class="p-2 rounded-xl bg-yellow-500/20 text-yellow-500 hover:bg-yellow-600/30">Go back</button>
+                    </a>Add a vehicle </h1>
+                        {{-- Form --}}
                         <form method="POST" action="/add-vehicle" class="dark:bg-zinc-900/50 dark:bg-gradient-to-bl from-teal-950/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/10 shadow-md rounded-lg px-8 pt-6 pb-8 mb-4">
-                        @csrf
-                        <div class="mb-4">
+                            @csrf
+                            <div class="mb-4">
                             <label class="block text-white/90 font-bold mb-2" for="make">Make</label>
                             <input class="bg-zinc-800 shadow appearance-none border rounded w-full py-2 px-3 text-white/90 leading-tight focus:outline-none focus:shadow-outline" name='make' id="make" type="text" placeholder="Enter make">
                         </div>
@@ -65,10 +66,7 @@
                             <input class="bg-zinc-800 shadow appearance-none border rounded w-full py-2 px-3 text-white/90 leading-tight focus:outline-none focus:shadow-outline" name='lotNumber' id="lotNumber" type="text" placeholder="Enter lot number">
                         </div>
                         <button class="p-2 mt-2 rounded-xl bg-teal-700/50 text-teal-500 hover:bg-teal-700/60" type="submit">Submit</button>
-                        </form>  
-                        <a href="/vehicles">
-                            <button class="p-2 mt-2 rounded-xl bg-red-900/20 text-red-600 hover:bg-red-900/30">Go back</button>
-                        </a>                           
+                        </form>                            
                 </div>
             </main>
         </div>        

@@ -26,18 +26,23 @@
                     <h1 class="text-white m-2">Add a vehicle</h1>
                     
                     {{-- Form --}}
-                        <form class=" dark:bg-zinc-900/50 dark:bg-gradient-to-bl from-teal-950/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/10 shadow-md rounded-lg px-8 pt-6 pb-8 mb-4">
+                        <form method="POST" action="/add-vehicle" class="dark:bg-zinc-900/50 dark:bg-gradient-to-bl from-teal-950/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/10 shadow-md rounded-lg px-8 pt-6 pb-8 mb-4">
+                        @csrf
                         <div class="mb-4">
                             <label class="block text-white/90 font-bold mb-2" for="make">Make</label>
-                            <input class="bg-zinc-800 shadow appearance-none border rounded w-full py-2 px-3 text-white/90 leading-tight focus:outline-none focus:shadow-outline" id="make" type="text" placeholder="Enter make">
+                            <input class="bg-zinc-800 shadow appearance-none border rounded w-full py-2 px-3 text-white/90 leading-tight focus:outline-none focus:shadow-outline" name='make' id="make" type="text" placeholder="Enter make">
                         </div>
                         <div class="mb-4">
                             <label class="block text-white/90 font-bold mb-2" for="model">Model</label>
-                            <input class="bg-zinc-800 shadow appearance-none border rounded w-full py-2 px-3 text-white/90 leading-tight focus:outline-none focus:shadow-outline" id="model" type="text" placeholder="Enter model">
+                            <input class="bg-zinc-800 shadow appearance-none border rounded w-full py-2 px-3 text-white/90 leading-tight focus:outline-none focus:shadow-outline" name='model' id="model" type="text" placeholder="Enter model">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-white/90 font-bold mb-2" for="mileage">Year</label>
+                            <input class="bg-zinc-800 shadow appearance-none border rounded w-full py-2 px-3 text-white/90 leading-tight focus:outline-none focus:shadow-outline" name='year' id="year" type="number" placeholder="Enter year">
                         </div>
                         <div class="mb-4">
                             <label class="block text-white/90 font-bold mb-2" for="fuel">Fuel</label>
-                            <select class="bg-zinc-800 shadow appearance-none border rounded w-full py-2 px-3 text-white/90 leading-tight focus:outline-none focus:shadow-outline" id="fuel">
+                            <select class="bg-zinc-800 shadow appearance-none border rounded w-full py-2 px-3 text-white/90 leading-tight focus:outline-none focus:shadow-outline" name='fuel' id="fuel">
                             <option>Gasoline</option>
                             <option>Diesel</option>
                             <option>Electric</option>
@@ -45,19 +50,19 @@
                         </div>
                         <div class="mb-4">
                             <label class="block text-white/90 font-bold mb-2" for="mileage">Mileage</label>
-                            <input class="bg-zinc-800 shadow appearance-none border rounded w-full py-2 px-3 text-white/90 leading-tight focus:outline-none focus:shadow-outline" id="mileage" type="number" placeholder="Enter mileage">
+                            <input class="bg-zinc-800 shadow appearance-none border rounded w-full py-2 px-3 text-white/90 leading-tight focus:outline-none focus:shadow-outline" name='mileage' id="mileage" type="number" placeholder="Enter mileage">
                         </div>
                         <div class="mb-4">
                             <label class="block text-white/90 font-bold mb-2" for="price">Price</label>
-                            <input class="bg-zinc-800 shadow appearance-none border rounded w-full py-2 px-3 text-white/90 leading-tight focus:outline-none focus:shadow-outline" id="price" type="number" placeholder="Enter price">
+                            <input class="bg-zinc-800 shadow appearance-none border rounded w-full py-2 px-3 text-white/90 leading-tight focus:outline-none focus:shadow-outline" name='price' id="price" type="number" placeholder="Enter price">
                         </div>
                         <div class="mb-4">
                             <label class="block text-white/90 font-bold mb-2" for="vin">VIN</label>
-                            <input class="bg-zinc-800 shadow appearance-none border rounded w-full py-2 px-3 text-white/90 leading-tight focus:outline-none focus:shadow-outline" id="vin" type="text" placeholder="Enter VIN">
+                            <input class="bg-zinc-800 shadow appearance-none border rounded w-full py-2 px-3 text-white/90 leading-tight focus:outline-none focus:shadow-outline" name='vin' id="vin" type="text" placeholder="Enter VIN">
                         </div>
                         <div class="mb-4">
                             <label class="block text-white/90 font-bold mb-2" for="lotNumber">Lot Number</label>
-                            <input class="bg-zinc-800 shadow appearance-none border rounded w-full py-2 px-3 text-white/90 leading-tight focus:outline-none focus:shadow-outline" id="lotNumber" type="text" placeholder="Enter lot number">
+                            <input class="bg-zinc-800 shadow appearance-none border rounded w-full py-2 px-3 text-white/90 leading-tight focus:outline-none focus:shadow-outline" name='lotNumber' id="lotNumber" type="text" placeholder="Enter lot number">
                         </div>
                         <button class="p-2 mt-2 rounded-xl bg-teal-700/50 text-teal-500 hover:bg-teal-700/60" type="submit">Submit</button>
                         </form>  

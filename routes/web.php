@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Vehicles;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ManagementController;
 
@@ -23,6 +24,9 @@ Route::get('/vehicles', [ManagementController::class, 'vehicles']);
 
 // Add a vehicle
 Route::get('/add-vehicle', [ManagementController::class, 'addVehicle']);
+
+// Add a vehicle form
+Route::post('/add-vehicle', [ManagementController::class, 'addVehicleForm']);
 
 // Add a task
 Route::get('/task', [ManagementController::class, 'addTask']);

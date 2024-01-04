@@ -9,7 +9,7 @@
     <main class="flex flex-wrap">
         <div class="max-w-7xl mt-8 mx-auto p-6 lg:p-8">
             <h1 class="text-white m-2">Home page</h1>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 lg:gap-8">
                 @foreach ($task as $t)
                     
                 <div class="scale-100 p-6 dark:bg-zinc-900/50 dark:bg-gradient-to-bl from-teal-950/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/10 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2">

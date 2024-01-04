@@ -49,7 +49,7 @@ class ManagementController extends Controller
         Tasks::create([
             'task' => request('task'),
         ]);
-        return redirect('/task');
+        return redirect('/');
     }
 
     // Delete a task

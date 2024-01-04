@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Vehicles;
+use App\Models\Tasks;
 
 class ManagementController extends Controller
 {
-    //Home page
+    // Home page + Shows all tasks
     public function index() {
-        return view('index');
+        $task = Tasks::all();
+        return view('index', compact('task'));
     }
 
     // Vehicles page
@@ -40,5 +42,20 @@ class ManagementController extends Controller
     // Add a task page
     public function addTask() {
         return view('task');
+    }
+
+    // Add a task from
+    public function addTaskForm() {
+        Tasks::create([
+            'task' => request('task'),
+        ]);
+        return redirect('/task');
+    }
+
+    // Delete a task
+    public function deleteTask($id) {
+        $task = Tasks::findOrFail($id);
+        $task->delete();
+        return redirect('/');
     }
 }

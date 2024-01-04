@@ -26,10 +26,11 @@
                     <h1 class="text-white m-2">Add a task</h1>
                     
                     {{-- Form --}}
-                        <form class=" dark:bg-zinc-900/50 dark:bg-gradient-to-bl from-teal-950/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/10 shadow-md rounded-lg px-8 pt-6 pb-8 mb-4">
-                        <div class="mb-4">
+                        <form method="POST" action="/task" class=" dark:bg-zinc-900/50 dark:bg-gradient-to-bl from-teal-950/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/10 shadow-md rounded-lg px-8 pt-6 pb-8 mb-4">
+                        @csrf
+                            <div class="mb-4">
                             <label class="block text-white/90 font-bold mb-2" for="task">Task message</label>
-                            <textarea class="bg-zinc-800 shadow appearance-none border rounded w-full py-2 px-3 text-white/90 leading-tight focus:outline-none focus:shadow-outline resize-none" id="task" rows="4" placeholder="Oil change needed for ..."></textarea>
+                            <textarea class="bg-zinc-800 shadow appearance-none border rounded w-full py-2 px-3 text-white/90 leading-tight focus:outline-none focus:shadow-outline resize-none" name="task" id="task" rows="4" placeholder="Oil change needed for ..."></textarea>
                         </div>                        
                         <button class="p-2 mt-2 rounded-xl bg-teal-700/50 text-teal-500 hover:bg-teal-700/60" type="submit">Submit</button>
                         </form>                            

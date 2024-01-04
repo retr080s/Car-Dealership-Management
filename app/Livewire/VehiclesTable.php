@@ -5,6 +5,7 @@ namespace App\Livewire;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
 use App\Models\Vehicles;
+use Illuminate\Http\Request;
 
 class VehiclesTable extends DataTableComponent
 {
@@ -14,6 +15,15 @@ class VehiclesTable extends DataTableComponent
     {
         $this->setPrimaryKey('id');
     }
+
+    // Delete function per row
+    public function delete($id) {
+        $vehicle = Vehicles::findOrFail($id);
+        $vehicle->delete();
+    }
+
+    // Edit function
+
 
     public function columns(): array
     {
@@ -47,8 +57,14 @@ class VehiclesTable extends DataTableComponent
             Column::make("Created at", "created_at")
                 ->sortable()
                 ->searchable(),
-            // Column::make("Updated at", "updated_at")
-            //     ->sortable(),
+            Column::make("Updated at", "updated_at")
+                ->sortable(),
+            Column::make('Action')
+                ->label(
+                    fn ($row, Column $column) => view('components.livewire.datatables.action-column')->with([
+                        'row' => $row,
+                    ]))->html(),
+            
         ];
     }
 }

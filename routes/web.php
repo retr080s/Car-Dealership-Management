@@ -4,6 +4,9 @@ use App\Models\Vehicles;
 use App\Models\Tasks;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ManagementController;
+use Illuminate\Database\Capsule\Manager;
+
+use function PHPUnit\Framework\returnSelf;
 
 /*
 |--------------------------------------------------------------------------

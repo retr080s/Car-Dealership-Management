@@ -1,7 +1,7 @@
 @include('important-components.header')
 
 <div class="min-h-screen flex">
-    <aside class="bg-zinc-900 text-white/90 sticky top-0 flex-shrink-0 w-64 border-r border-teal-700/50">
+    <aside class="bg-zinc-800 text-white/90 sticky top-0 flex-shrink-0 w-64 border-r border-teal-700/50">
         <nav class="px-4 py-4 flex flex-col space-y-4">
             @include('important-components.sidebar-links')
         </nav>

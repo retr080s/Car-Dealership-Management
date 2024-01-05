@@ -39,6 +39,31 @@ class ManagementController extends Controller
         return redirect('vehicles');
     }
 
+    // Edit vehicle
+    public function edit($id) {
+        $vehicle = Vehicles::findOrFail($id);
+        return view('vehicles.edit-vehicle', compact('vehicle'));
+    }
+
+    // Update vehicle
+    public function update(Request $request, $id) {
+        $validateData = $request->validate([
+            'make' => 'required',
+            'model' => 'required',
+            'year' => 'required',
+            'fuel' => 'required',
+            'mileage' => 'required',
+            'price' => 'required',
+            'vin' => 'required',
+            'lotNumber' => 'required',
+        ]);
+
+        $vehicle = Vehicles::findOrFail($id);
+        $vehicle->update($validateData);
+
+        return redirect('/vehicles');
+    }
+
     // Add a task page
     public function addTask() {
         return view('task');

@@ -23,7 +23,10 @@ class VehiclesTable extends DataTableComponent
     }
 
     // Edit function
-
+    public function edit($id) {
+        $vehicle = Vehicles::findOrFail($id);
+        return redirect()->route('vehicles.edit-vehicle', $vehicle->id);
+    }
 
     public function columns(): array
     {

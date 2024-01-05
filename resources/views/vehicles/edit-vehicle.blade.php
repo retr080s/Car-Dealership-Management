@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        @include('important-components.header')
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+        <!-- Scripts -->
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    </head>
+    @if (Route::has('login'))
+        <livewire:welcome.navigation />
+        @endif
+    <body class="bg-zinc-950">
+        <div class="min-h-screen flex">
+            <aside class="bg-zinc-900 text-white/90 sticky top-0 flex-shrink-0 w-64 border-r border-teal-700/50">
+                <nav class="px-4 py-4 flex flex-col space-y-4">
+                    @include('important-components.sidebar-links')
+                    
+                </nav>
+            </aside>
+            <main class="">
+                <div class="max-w-7xl mt-8 mx-auto p-6 lg:p-8 "> 
+                    <h1 class="text-white m-2"><a href="/vehicles">
+                        <button class="p-2 rounded-xl bg-yellow-500/20 text-yellow-500 hover:bg-yellow-600/30">Go back</button>
+                    </a>Edit Vehicle </h1>
+                        {{-- Form --}}
+                        <form method="POST" action="{{ route('vehicles.edit-vehicle.update', $vehicle->id) }}" class="dark:bg-zinc-900/50 dark:bg-gradient-to-bl from-teal-950/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/10 shadow-md rounded-lg px-8 pt-6 pb-8 mb-4">
+                            @csrf
+                            @method('PUT')
+                            <div class="mb-4">
+                            <label class="block text-white/90 font-bold mb-2" for="make">Make</label>
+                            <input value="{{ $vehicle->make }}" class="bg-zinc-800 shadow appearance-none border rounded w-full py-2 px-3 text-white/90 leading-tight focus:outline-none focus:shadow-outline" name='make' id="make" type="text" placeholder="Enter make">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-white/90 font-bold mb-2" for="model">Model</label>
+                            <input value="{{ $vehicle->model }}" class="bg-zinc-800 shadow appearance-none border rounded w-full py-2 px-3 text-white/90 leading-tight focus:outline-none focus:shadow-outline" name='model' id="model" type="text" placeholder="Enter model">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-white/90 font-bold mb-2" for="mileage">Year</label>
+                            <input value="{{ $vehicle->mileage }}" class="bg-zinc-800 shadow appearance-none border rounded w-full py-2 px-3 text-white/90 leading-tight focus:outline-none focus:shadow-outline" name='year' id="year" type="number" placeholder="Enter year">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-white/90 font-bold mb-2" for="fuel">Fuel</label>
+                            <select value="{{ $vehicle->fuel }}" class="bg-zinc-800 shadow appearance-none border rounded w-full py-2 px-3 text-white/90 leading-tight focus:outline-none focus:shadow-outline" name='fuel' id="fuel">
+                            <option>Gasoline</option>
+                            <option>Diesel</option>
+                            <option>Electric</option>
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-white/90 font-bold mb-2" for="mileage">Mileage</label>
+                            <input value="{{ $vehicle->mileage }}" class="bg-zinc-800 shadow appearance-none border rounded w-full py-2 px-3 text-white/90 leading-tight focus:outline-none focus:shadow-outline" name='mileage' id="mileage" type="number" placeholder="Enter mileage">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-white/90 font-bold mb-2" for="price">Price</label>
+                            <input value="{{ $vehicle->price }}" class="bg-zinc-800 shadow appearance-none border rounded w-full py-2 px-3 text-white/90 leading-tight focus:outline-none focus:shadow-outline" name='price' id="price" type="number" placeholder="Enter price">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-white/90 font-bold mb-2" for="vin">VIN</label>
+                            <input value="{{ $vehicle->vin }}" class="bg-zinc-800 shadow appearance-none border rounded w-full py-2 px-3 text-white/90 leading-tight focus:outline-none focus:shadow-outline" name='vin' id="vin" type="text" placeholder="Enter VIN">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-white/90 font-bold mb-2" for="lotNumber">Lot Number</label>
+                            <input value="{{ $vehicle->lotNumber }}" class="bg-zinc-800 shadow appearance-none border rounded w-full py-2 px-3 text-white/90 leading-tight focus:outline-none focus:shadow-outline" name='lotNumber' id="lotNumber" type="text" placeholder="Enter lot number">
+                        </div>
+                        <button class="p-2 mt-2 rounded-xl bg-teal-700/50 text-teal-500 hover:bg-teal-700/60" type="submit">Update</button>
+                        </form>                            
+                </div>
+            </main>
+        </div>        
+    </body>
+</html>

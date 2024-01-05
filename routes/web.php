@@ -30,6 +30,10 @@ Route::get('/vehicles', [ManagementController::class, 'vehicles']);
 Route::get('/add-vehicle', [ManagementController::class, 'addVehicle']);
 // Add a vehicle form
 Route::post('/add-vehicle', [ManagementController::class, 'addVehicleForm']);
+// Edit vehicle form
+Route::get('/vehicles/edit-vehicle/{id}', [ManagementController::class, 'edit'])->name('vehicles.edit-vehicle');
+// Updates the data in the form
+Route::put('/vehicles/edit-vehicle/{id}', [ManagementController::class, 'update'])->name('vehicles.edit-vehicle.update');
 
 
 // ****** Task ******

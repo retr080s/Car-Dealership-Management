@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Inventory;
 use Illuminate\Http\Request;
 use App\Models\Vehicles;
 use App\Models\Tasks;
@@ -82,5 +83,32 @@ class ManagementController extends Controller
         $task = Tasks::findOrFail($id);
         $task->delete();
         return redirect('/');
+    }
+
+    // Inventory management
+    public function inventory() {
+        $invinfo = Inventory::all();
+        return view('inventory', compact('invinfo'));
+    }
+
+    // Inventory change location
+    public function inventoryChangeLocation() {
+        return view('inventory.change-location');
+    }
+
+    // Inventory change location form
+    public function inventoryChangeLocationForm() {
+        Inventory::create([
+            'currentLocation' => request('currentLocation'),
+            'lotNumber' => request('lotNumber'),
+        ]);
+        return redirect('/inventory');
+    }
+
+    // Inventory delete info
+    public function inventoryDelete($id) {
+        $invinfo = Inventory::findOrFail($id);
+        $invinfo->delete();
+        return redirect('/inventory');
     }
 }

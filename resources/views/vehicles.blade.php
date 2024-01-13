@@ -14,7 +14,7 @@
     </head>
     <body class="bg-zinc-950">
         @if (Route::has('login'))
-        <livewire:welcome.navigation />
+            <livewire:welcome.navigation />
         @endif
     </body>
 </html>

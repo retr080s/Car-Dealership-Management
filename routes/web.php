@@ -44,6 +44,18 @@ Route::post('/task', [ManagementController::class, 'addTaskForm']);
 // Delete task
 Route::delete('/{id}', [ManagementController::class, 'deleteTask'])->name('delete-task');
 
+// ****** Inventory ******
+// Inventory page
+Route::get('/inventory', [ManagementController::class, 'inventory']);
+// Change location
+Route::get('/inventory/vehicle-location', [ManagementController::class, 'inventoryChangeLocation']);
+// Change location Form
+Route::post('/inventory/vehicle-location', [ManagementController::class, 'inventoryChangeLocationForm']);
+// Delete inventory form
+Route::delete('/inventory/{id}', [ManagementController::class, 'inventoryDelete'])->name('delete-inventory');
+
+
+
 // ****** Auth ******
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

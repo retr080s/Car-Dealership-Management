@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ManagementController;
 use Illuminate\Database\Capsule\Manager;
 
-use function PHPUnit\Framework\returnSelf;
 
 /*
 |--------------------------------------------------------------------------

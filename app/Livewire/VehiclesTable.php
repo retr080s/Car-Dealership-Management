@@ -57,9 +57,8 @@ class VehiclesTable extends DataTableComponent
             Column::make("Lot Number", "lotNumber")
                 ->sortable()
                 ->searchable(),
-            Column::make("Created at", "created_at")
-                ->sortable()
-                ->searchable(),
+            // Column::make("Created at", "created_at")
+                // ->sortable(),
             Column::make("Updated at", "updated_at")
                 ->sortable(),
             Column::make('Action')

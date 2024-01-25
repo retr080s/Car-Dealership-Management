@@ -17,7 +17,8 @@ class ManagementController extends Controller
 
     // Vehicles page
     public function vehicles() {
-        return view('vehicles');
+        $totalWorth = Vehicles::sum('price');
+        return view('vehicles', ['totalWorth' => $totalWorth]);
     }
 
     // Add a vehicle page

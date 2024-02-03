@@ -1,3 +1,21 @@
+# Car Dealership Management
+
+<img src="https://img.shields.io/badge/PHP 🐘 -197874"> <img src="https://img.shields.io/badge/Laravel❤️ -197874"> <img src="https://img.shields.io/badge/Livewire⚡ -197874"> <img src="https://img.shields.io/badge/AlpineJS🗻 -197874"> <img src="https://img.shields.io/badge/TailwindCSS💨 -197874">
+
+Drowning in paperwork? Struggling to manage your inventory? CDM is your dealership's lifesaver. 
+
+## Boost your efficiency with intuitive task management.
+Assign, track, and prioritize tasks for your team, ensuring deadlines are met and nothing falls through the cracks.
+
+## Effortlessly manage your inventory
+Add, edit, and delete listings with ease, keeping your vehicle information up-to-date and accurate.
+
+## Access your dealership anytime, anywhere. 
+The mobile-friendly platform keeps you connected on the go, allowing you to manage your business even when you're not in the office.
+
+## Scalable
+Scalable solution that grows with your business, accommodating expanding inventory and staff.
+
 <h3>Home</h3>
 
 ![image](https://github.com/retr080s/Car-Dealership-Management/assets/84463361/36da8b77-1af1-44d8-a967-48a64e895356)
